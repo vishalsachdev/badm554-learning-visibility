@@ -28,6 +28,7 @@
     <ul>
       <li><a href="index.html">&larr; The findings</a></li>
       <li><a href="#afternoon">The afternoon</a></li>
+      <li><a href="#orchestrator">One orchestrator</a></li>
       <li><a href="#sessions">Chat sessions</a></li>
       <li><a href="#gitlog">Git logs</a></li>
       <li><a href="#records">Course records</a></li>
@@ -60,6 +61,41 @@
         <li><time>3:34 PM</time><p>The audio was re-encoded and transcribed on the laptop, and the transcript was scanned for student identifiers.</p></li>
         <li><time>3:37 PM</time><p>This repository was created with the plan, the context and the audio. The two pages were built after that and reviewed before publication.</p></li>
       </ol>
+    </section>
+
+    <section id="orchestrator" aria-labelledby="orch-title">
+      <div class="section-head">
+        <p class="eyebrow">The mental model</p>
+        <h2 id="orch-title">One orchestrator, many agents, context in files</h2>
+      </div>
+      <div class="prose">
+        <p class="lede">My context lives on my own filesystem, in plain files and git repositories. Any agent can pick it up and work on it. One orchestrator in the terminal sends each job to the agent that fits it.</p>
+        <p>This page used four AI tools from three companies (OpenAI, Anthropic and Google), plus media tools that run on the laptop. A desktop app is usually locked into one ecosystem, so it can call only its own models and its own connectors. The command line has no such lock. If a tool has a command-line interface, the orchestrator can run it, read the result from a file and pass it on.</p>
+      </div>
+
+      <figure class="orch" aria-labelledby="orch-cap">
+        <ul class="agents left" aria-label="Agents and tools, part 1">
+          <li class="node"><span class="who">OpenAI &middot; voice</span><h3>ChatGPT</h3><p>Drafted the report in a conversation and committed it to the repository as a handoff note.</p></li>
+          <li class="node"><span class="who">OpenAI &middot; university Edu account</span><h3>Codex Edu</h3><p><code>codex exec --sandbox read-only</code> Read the student records. Returned verdicts only.</p></li>
+          <li class="node"><span class="who">GitHub</span><h3>Repositories and issues</h3><p><code>gh issue list</code>, <code>gh api</code> Counted records, read receipts, published the site.</p></li>
+        </ul>
+        <div class="core">
+          <div class="node conductor"><span class="who">Orchestrator</span><h3>Claude Code in the terminal</h3><p>Plans the work, runs each tool, reads what comes back and checks it. One session per repository, side by side in Herdr.</p></div>
+          <p class="link" aria-hidden="true">reads and writes</p>
+          <div class="node files"><span class="who">Shared context</span><h3>The filesystem</h3><p>Git repositories, Markdown notes, handoff inboxes, transcripts and audio. Every agent reads from here and writes back here, so nothing is trapped inside one app.</p></div>
+        </div>
+        <ul class="agents right" aria-label="Agents and tools, part 2">
+          <li class="node"><span class="who">Canvas LMS &middot; open-source connector by the author</span><h3>Canvas</h3><p><code>Canvas MCP</code> Submissions, discussions, messages and grades for the course work.</p></li>
+          <li class="node"><span class="who">Google &middot; unofficial command line</span><h3>NotebookLM</h3><p><code>notebooklm generate audio</code> Made the audio overview from the reviewed report.</p></li>
+          <li class="node"><span class="who">On the laptop</span><h3>Media tools</h3><p><code>ffmpeg</code>, <code>whisper-cli</code> Re-encoded the audio and wrote the transcript, with no upload.</p></li>
+        </ul>
+        <figcaption id="orch-cap" class="note" style="grid-column:1/-1;margin-top:0.75rem">The orchestrator sits between the shared files and six kinds of agent or tool. Each tool is named by the command the orchestrator ran.</figcaption>
+      </figure>
+
+      <div class="lockin">
+        <div class="yes"><h3>What the command line allows</h3><ul><li>Mix models and companies in one task.</li><li>Send student data to the one tool approved for it, and keep it away from the rest.</li><li>Keep a record of every call, because each step is a command and a file.</li><li>Change the agent later without moving the context.</li></ul></div>
+        <div class="no"><h3>What a single desktop app usually allows</h3><ul><li>Its own models and its own connectors.</li><li>Context stored inside the app, in its own format.</li><li>Handoffs by copy and paste.</li><li>Rules about data enforced by the vendor, not by you.</li></ul></div>
+      </div>
     </section>
 
     <section id="sessions" aria-labelledby="sessions-title">
@@ -154,6 +190,32 @@
           </tbody>
         </table>
       </div>
+      <div class="prose">
+        <h3>The commands, in order</h3>
+        <p>A shortened record of what the orchestrator ran for this page. File names are simplified, and the course repository's name is left out.</p>
+      </div>
+<pre><code># 1. read the course records
+gh issue list --repo &lt;course-repo&gt; --state all --limit 200
+gh pr list --repo &lt;course-repo&gt; --state all
+
+# 2. hand the student-record claims to Codex on the Edu account
+codex exec --sandbox read-only -o VERDICT.md "$(cat PROMPT.md)"
+
+# 3. make the audio overview
+notebooklm create "Learning Visibility in BADM 554"
+notebooklm source add --type file report.md
+notebooklm generate audio --format deep-dive --wait "&lt;prompt&gt;"
+notebooklm download audio overview.m4a
+
+# 4. encode and transcribe on the laptop
+ffmpeg -i overview.m4a -ac 1 -b:a 80k learning-visibility-audio.mp3
+whisper-cli -m ggml-base.en.bin -otxt -ovtt -f audio.wav
+
+# 5. check the prose, then publish
+python3 outbound_check.py docs/index.html
+git commit &amp;&amp; git push
+gh repo edit --visibility public
+gh api -X POST repos/&lt;owner&gt;/&lt;repo&gt;/pages -f "source[path]=/docs"</code></pre>
     </section>
 
     <section id="notebooklm" aria-labelledby="nlm-title">

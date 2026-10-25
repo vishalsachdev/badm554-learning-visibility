@@ -180,3 +180,57 @@ ol.timeline time { font-weight: 700; color: var(--accent); font-variant-numeric:
 @media (max-width: 30rem) { ol.timeline li { grid-template-columns: 1fr; gap: 0.2rem; } }
 .pagenav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-weight: 600; }
 td code { font-weight: 400; }
+
+/* Progressive disclosure: each section is a layer with a one-line takeaway */
+.layers { display: grid; gap: 0.75rem; }
+details.layer { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--ink); border-radius: 4px; padding: 0; border-top: 1px solid var(--rule); }
+details.layer > summary { list-style: none; cursor: pointer; padding: 1rem 3rem 1rem clamp(1rem, 3vw, 1.4rem); position: relative; display: grid; gap: 0.3rem; }
+details.layer > summary::-webkit-details-marker { display: none; }
+details.layer > summary::after { content: "+"; position: absolute; right: 1rem; top: 0.9rem; font-size: 1.6rem; font-weight: 700; line-height: 1; color: var(--accent); }
+details.layer[open] > summary::after { content: "\2212"; }
+details.layer > summary:hover h2 { color: var(--accent); }
+details.layer > summary:focus-visible { outline: 3px solid var(--field); outline-offset: 2px; }
+details.layer > summary .eyebrow { color: var(--accent); }
+details.layer > summary h2 { font-size: var(--step-1); }
+details.layer > summary .takeaway { color: var(--text); max-width: var(--measure); }
+details.layer > summary .more { font-size: var(--step--1); font-weight: 600; color: var(--link); }
+details.layer[open] > summary .more { display: none; }
+details.layer > .layer-body { padding: 0.2rem clamp(1rem, 3vw, 1.4rem) 1.4rem; display: grid; gap: 1.2rem; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+details.layer.addon-layer { border-left-color: var(--muted); border-style: dashed; border-left-style: solid; }
+.case details { border-top: 1px solid var(--rule); padding-top: 0.6rem; }
+.case details summary { font-size: var(--step--1); color: var(--link); }
+.case details dl { border-top: 0; padding-top: 0.6rem; }
+.lede { font-size: var(--step-1); color: var(--ink); max-width: var(--measure); line-height: 1.45; }
+.listen.compact { padding: 1rem clamp(1rem, 3vw, 1.4rem); }
+@media print { details.layer > .layer-body { display: grid !important; } }
+
+/* Orchestrator diagram (process page): HTML, not an image, so it reads in order and stacks on phones */
+.orch { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+.orch .core { display: grid; gap: 0.5rem; }
+.orch .node { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 0.8rem 0.9rem; display: grid; gap: 0.25rem; min-width: 0; }
+.orch .node h3 { font-size: var(--step-0); }
+.orch .node p { font-size: 0.93rem; }
+.orch .node code { font-size: 0.82rem; }
+.orch .node .who { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.orch .conductor { background: var(--band); border-color: var(--band); }
+.orch .conductor h3, .orch .conductor p { color: var(--band-ink); }
+.orch .conductor .who { color: var(--field); }
+.orch .conductor code { background: rgba(255,255,255,0.12); color: var(--band-ink); }
+.orch .files { border: 2px solid var(--field); }
+.orch .files .who { color: var(--accent); }
+.orch .agents { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.orch .agents .node { border-left: 4px solid var(--ink); }
+.orch .link { text-align: center; color: var(--accent); font-weight: 700; font-size: var(--step--1); }
+@media (min-width: 52rem) {
+  .orch { grid-template-columns: 1fr 1.1fr 1fr; align-items: center; gap: 0 1.5rem; }
+  .orch .agents .node { position: relative; }
+  .orch .agents.left .node::after, .orch .agents.right .node::before { content: ""; position: absolute; top: 50%; width: 1.5rem; border-top: 2px dashed var(--accent); }
+  .orch .agents.left .node::after { right: calc(-1.5rem - 1px); }
+  .orch .agents.right .node::before { left: calc(-1.5rem - 5px); }
+}
+.lockin { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 0.75rem; }
+.lockin > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 0.9rem 1rem; display: grid; gap: 0.4rem; align-content: start; }
+.lockin > div.yes { border-top: 4px solid var(--field); }
+.lockin > div.no { border-top: 4px solid var(--rule); }
+.lockin h3 { font-size: var(--step-0); }
+.lockin ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; font-size: 0.95rem; }
