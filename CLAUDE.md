@@ -25,5 +25,5 @@ Start with [plan-as-approved.md](plan-as-approved.md), then [context/HISTORY.md]
 - **Created** from the msba-online session. Context, plan and assets moved here. Site not built yet.
 - **Next:** build `docs/index.html` and `docs/process.html` per the plan; Vishal reviews; then public + Pages.
 - **Built** (same day, session `badm554-learning-visibility`): `docs/index.html` retitled "Making Student Reasoning Visible", `docs/process.html`; audio moved to `docs/assets/`. Outbound gate clean except a verbatim "paradigm shift" in the NotebookLM transcript (Vishal: keep). 375px and no-JS checked.
-- **Published:** history squashed to one commit (`context/` held private links and a personal address), repo made public, Pages on. Old SHAs `ab67831`, `9cbe1a0` stay reachable on GitHub by direct URL until GitHub purges them.
+- **Published:** history squashed to one commit (`context/` held private links and a personal address), repo made public, Pages on. The old SHAs were still reachable by direct URL, so the repo was deleted and recreated (Vishal's yes) and the clean history pushed; `ab67831` and `9cbe1a0` now return 404.
 - **Yun Huang email** staged in Thunderbird Drafts (replaced Vishal's started draft); links to the live site. Not sent.
