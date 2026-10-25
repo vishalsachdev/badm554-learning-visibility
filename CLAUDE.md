@@ -3,9 +3,9 @@
 **Type:** teaching / public write-up. **Owner and author:** Vishal Sachdev, Gies College of Business.
 **Remote:** `vishalsachdev/badm554-learning-visibility`, PUBLIC since 2026-10-25 (Vishal's yes). Live: https://vishalsachdev.github.io/badm554-learning-visibility/ (Pages from `docs/`, legacy build). `context/` is local only and gitignored; never track it.
 
-A public page on how BADM 554 (Fall 2026, online and in-person sections) makes student reasoning visible with GitHub, AI-assisted review and Canvas, what the course records show, and what they do not show yet. It carries a NotebookLM audio overview and a process note on how the page itself was built.
+A public page, "Making Student Reasoning Visible", a case study of how BADM 554 (Fall 2026, online and in-person sections) makes student reasoning visible with GitHub, AI-assisted review and Canvas, what the course records show, and what they do not show yet. It carries a NotebookLM audio overview and a process note on how the page itself was built.
 
-Start with [plan-as-approved.md](plan-as-approved.md), then [context/HISTORY.md](context/HISTORY.md).
+Start with [plan-as-approved.md](plan-as-approved.md), then `context/HISTORY.md` (local only, gitignored).
 
 ## Rules for this repo
 - Public audience. No student names, NetIDs, GitHub handles, emails or individual grades, anywhere, including `context/`. Class-level counts only; soften the smallest ones.
@@ -19,11 +19,11 @@ Start with [plan-as-approved.md](plan-as-approved.md), then [context/HISTORY.md]
 - `sources/badm554` → `~/teaching/badm554` (course repo; student data, see rule above)
 - `sources/msba-online` → `~/admin/msba-online` (program KB; Jev's original report in `_agent-inbox/done/2026-10-25-badm554-*.md`, review record in `docs/handoff-status/2026-10-25-badm554-ai-learning-visibility-report.md`)
 
+## Current Focus
+Site is live. Waiting on Vishal: send the Yun Huang email (staged in Thunderbird Drafts) and review the progressive-disclosure layout.
+
 ## Session Log
 
 ### 2026-10-25
-- **Created** from the msba-online session. Context, plan and assets moved here. Site not built yet.
-- **Next:** build `docs/index.html` and `docs/process.html` per the plan; Vishal reviews; then public + Pages.
-- **Built** (same day, session `badm554-learning-visibility`): `docs/index.html` retitled "Making Student Reasoning Visible", `docs/process.html`; audio moved to `docs/assets/`. Outbound gate clean except a verbatim "paradigm shift" in the NotebookLM transcript (Vishal: keep). 375px and no-JS checked.
-- **Published:** history squashed to one commit (`context/` held private links and a personal address), repo made public, Pages on. The old SHAs were still reachable by direct URL, so the repo was deleted and recreated (Vishal's yes) and the clean history pushed; `ab67831` and `9cbe1a0` now return 404.
-- **Yun Huang email** staged in Thunderbird Drafts (replaced Vishal's started draft); links to the live site. Not sent.
+- Completed: built `docs/index.html` ("Making Student Reasoning Visible") and `docs/process.html` from the approved plan; findings page rebuilt with collapsed `<details>` layers (short version and audio open); process page opens with the "one orchestrator, many agents, context in files" diagram and lists the CLI commands in order. Audio moved to `docs/assets/`; Whisper surname error fixed. `context/` untracked; repo deleted and recreated with clean history (old SHAs 404), public, Pages live at https://vishalsachdev.github.io/badm554-learning-visibility/. Outbound gate clean except a verbatim "paradigm shift" in the NotebookLM transcript (Vishal: keep). 375px checked with all layers open. Yun Huang collaboration email staged (replaced Vishal's started draft); PEOPLE files for Yun Huang and Andrew Allen.
+- Next: Vishal sends the Yun email; review the live layout; optional PNG export of the orchestrator diagram; optional repo rename (would change the URL in the email, so decide before sending); optional removal of the `delete_repo` gh scope.
