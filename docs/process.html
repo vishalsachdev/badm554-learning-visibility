@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How This Page Was Built</title>
+<meta name="description" content="A process note on how the BADM 554 learning visibility page was made in one afternoon: chat sessions, git logs, real course records, privacy protection for student data, command-line access to every tool, and the NotebookLM audio.">
+<meta name="author" content="Vishal Sachdev">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Process note &middot; Making Student Reasoning Visible</p>
+    <h1>How this page was built</h1>
+    <p class="dek">From a voice conversation to a reviewed public page in one afternoon, with student data kept out of every tool that did not need it.</p>
+    <p class="byline">Vishal Sachdev <span>&middot; Gies College of Business, University of Illinois Urbana-Champaign &middot; October 2026</span></p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">&larr; The findings</a></li>
+      <li><a href="#afternoon">The afternoon</a></li>
+      <li><a href="#sessions">Chat sessions</a></li>
+      <li><a href="#gitlog">Git logs</a></li>
+      <li><a href="#records">Course records</a></li>
+      <li><a href="#privacy">Privacy protection</a></li>
+      <li><a href="#cli">Command-line access</a></li>
+      <li><a href="#notebooklm">NotebookLM</a></li>
+      <li><a href="#notused">What was not used</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="wrap">
+
+    <section id="afternoon" aria-labelledby="afternoon-title">
+      <div class="section-head">
+        <p class="eyebrow">Overview</p>
+        <h2 id="afternoon-title">The afternoon of October 25, 2026</h2>
+      </div>
+      <div class="prose">
+        <p>The page was made in about four hours. Each step left a record: a commit, a session log or a saved file. The times below are US Central.</p>
+      </div>
+      <ol class="timeline">
+        <li><time>11:24 AM</time><p>A voice conversation with ChatGPT produced a draft report on learning visibility in BADM 554 and a separate add-on for the learning team. Both drafts were committed to the program repository as handoff notes.</p></li>
+        <li><time>~2:30 PM</time><p>A Claude Code session reviewed the draft. It checked the claims against program documents, the Canvas help pages and the Canvas MCP README, and recounted the repository records.</p></li>
+        <li><time>2:49 PM</time><p>Codex, signed in to the university's ChatGPT Edu account, checked the 11 claims that rest on student records. It returned de-identified verdicts only.</p></li>
+        <li><time>~2:52 PM</time><p>A private reader version of the reviewed report was published for the author.</p></li>
+        <li><time>2:58 PM</time><p>The handoff notes were closed. A cleanup request went to the course repository.</p></li>
+        <li><time>3:00 PM</time><p>The reviewed report went to Google NotebookLM as the only source of a new notebook. The audio overview was ready at 3:08 PM.</p></li>
+        <li><time>3:34 PM</time><p>The audio was re-encoded and transcribed on the laptop, and the transcript was scanned for student identifiers.</p></li>
+        <li><time>3:37 PM</time><p>This repository was created with the plan, the context and the audio. The two pages were built after that and reviewed before publication.</p></li>
+      </ol>
+    </section>
+
+    <section id="sessions" aria-labelledby="sessions-title">
+      <div class="section-head">
+        <p class="eyebrow">Who did what</p>
+        <h2 id="sessions-title">Chat sessions</h2>
+      </div>
+      <div class="prose">
+        <p><strong>The draft came from a conversation.</strong> I talked the report through with ChatGPT in voice mode. That assistant (I call it Jev) wrote the draft and the learning-team add-on, then committed both to the program repository as handoff notes for a coding agent to pick up. A conversation is a fast way to get the argument down. It is not a way to check it.</p>
+        <p><strong>The review was a separate session.</strong> A Claude Code session, running in the terminal inside the program repository, picked up the handoff. It read the program's design documents, the Canvas help pages and the Canvas MCP README against the draft's claims. It recounted the issue and pull request counts. It handed every claim about student work to Codex Edu (see below) and published a private reader version. I asked for a page to share with people; it built this site from the reviewed text.</p>
+        <p><strong>Each repository has its own session.</strong> I run these agents in Herdr, a terminal workspace manager for coding agents. Each repository gets one workspace and one long-running session: one for the program, one for each course section, one for this site. When one session needs work done in another repository, it writes a short handoff note into that repository's inbox folder instead of editing files it does not own. The cleanup request for the course repository went that way. The session that owns the repository decides when to act on it.</p>
+      </div>
+    </section>
+
+    <section id="gitlog" aria-labelledby="gitlog-title">
+      <div class="section-head">
+        <p class="eyebrow">The paper trail</p>
+        <h2 id="gitlog-title">Git logs</h2>
+      </div>
+      <div class="prose">
+        <p>Three repositories carry the trail. The program and course repositories are private, so the commits are listed here without links. Times are US Central.</p>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Commit trail" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Commit</th><th scope="col">Repository</th><th scope="col">Time</th><th scope="col">What it recorded</th></tr></thead>
+          <tbody>
+            <tr><td><code>dec7e011</code></td><td>Program (private)</td><td>11:24 AM</td><td>The draft report on learning visibility, added to the agent inbox</td></tr>
+            <tr><td><code>19506437</code></td><td>Program (private)</td><td>11:24 AM</td><td>The separate learning-team add-on, added to the agent inbox</td></tr>
+            <tr><td><code>f1348728</code></td><td>Program (private)</td><td>2:58 PM</td><td>Both inbox items closed after review</td></tr>
+            <tr><td><code>31ec7116</code></td><td>Course (private)</td><td>2:58 PM</td><td>A cross-link to the reviewed report, and a request to remove student first names from a planning document</td></tr>
+            <tr><td><code>5767f469</code></td><td>Program (private)</td><td>3:08 PM</td><td>The NotebookLM audio overview recorded in the review notes</td></tr>
+            <tr><td><code>ab67831</code></td><td>This site</td><td>3:37 PM</td><td>The approved plan, the context and the audio moved into a new repository</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Later commits, including the build of these two pages, are in <a href="https://github.com/vishalsachdev/badm554-learning-visibility/commits/main">this site's public history</a>. Each commit made by an agent names the session that made it.</p>
+    </section>
+
+    <section id="records" aria-labelledby="records-title">
+      <div class="section-head">
+        <p class="eyebrow">The evidence base</p>
+        <h2 id="records-title">Real course records</h2>
+      </div>
+      <div class="prose">
+        <p>The findings rest on records the course already keeps, not on data collected for this page. BADM 554 runs its operations in a GitHub repository. When the instructor and the AI tools check student work, send messages or enter grades, the work is planned in an issue, and the result is posted back to the issue as a receipt: what was checked, what was sent, what was confirmed in Canvas, and what failed.</p>
+        <p>The review screened all 51 issues and 27 pull requests in the course repository and read the full discussion on 12 issues. It also looked at 33 issues in the SQL tutor project and 25 in the course textbook. The four cases on the findings page come from those receipts. They are described in words, with class-level counts only, and the smallest counts are softened so that no student can be picked out.</p>
+        <p>The records were not re-tested live. A receipt says what the tool reported at the time. It is good evidence that a step happened, and weaker evidence that it worked as intended.</p>
+      </div>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-title">
+      <div class="section-head">
+        <p class="eyebrow">Student data</p>
+        <h2 id="privacy-title">Privacy protection with Codex Edu</h2>
+      </div>
+      <div class="prose">
+        <p>My rule is that student data (submissions, rosters, grades, issue comments that mention students) goes only to Codex signed in to the university's ChatGPT Edu account. Other AI tools get de-identified output, aggregates or a file path.</p>
+      </div>
+      <ol class="steps">
+        <li><strong>Claude wrote the questions, not the answers</strong><p>The review session drew 11 checkable claims from the draft. It wrote a prompt that asked Codex to judge each claim against its source and to report any student identifiers it found, without quoting them.</p></li>
+        <li><strong>Codex Edu read the sources</strong><p>Codex ran in a read-only sandbox on copies of six course issues, two SQL tutor issues, two audit notes and the dashboard plan.</p></li>
+        <li><strong>Claude saw verdicts only</strong><p>The result: 10 claims supported and 1 partly supported, because one warning came from a different audit note than the draft said. Claude never read the raw sources.</p></li>
+        <li><strong>The raw copies were deleted</strong><p>After the check, the copies were removed. The prompt and the de-identified verdicts are kept with this site's working files.</p></li>
+        <li><strong>The check found identifiers to clean up</strong><p>Two sources held student identifiers: one GitHub username in an issue thread, and student first names in a planning document. Neither reached this page. A cleanup request for the planning document went to the course repository.</p></li>
+      </ol>
+      <div class="callout"><p>The gap, stated honestly: the first draft was written on a ChatGPT Pro account, not the Edu account, and that conversation had read some of the same sources. The Codex Edu check closed the gap for the review. It did not close it for the draft.</p></div>
+      <div class="prose">
+        <p>The audio transcript was also scanned for names and issue numbers before publication. It holds none, apart from the author's name.</p>
+      </div>
+    </section>
+
+    <section id="cli" aria-labelledby="cli-title">
+      <div class="section-head">
+        <p class="eyebrow">How the agents reach things</p>
+        <h2 id="cli-title">Command-line access to everything</h2>
+      </div>
+      <div class="prose">
+        <p>An agent can only check what it can reach. Every system in this project has a command-line or protocol interface, so one terminal session could read the course repository, query Canvas, hand student data to Codex Edu, drive NotebookLM and process the audio, all with a record of each call.</p>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Tools and what they reach" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Tool</th><th scope="col">What it reaches</th><th scope="col">Used here for</th></tr></thead>
+          <tbody>
+            <tr><td><code>gh</code></td><td>GitHub</td><td>Counting issues and pull requests, reading receipts, checking which repositories are public</td></tr>
+            <tr><td><a href="https://github.com/vishalsachdev/canvas-mcp">Canvas MCP</a></td><td>Canvas, through the Model Context Protocol</td><td>The course work described on the findings page: reading submissions and discussions, sending messages, entering grades</td></tr>
+            <tr><td><code>codex</code></td><td>Codex on the university ChatGPT Edu account</td><td>Every step that needed to read student data</td></tr>
+            <tr><td><code>notebooklm</code></td><td>Google NotebookLM, through the unofficial <a href="https://github.com/teng-lin/notebooklm-py">notebooklm-py</a></td><td>Creating the notebook, uploading the source, generating and downloading the audio</td></tr>
+            <tr><td><code>ffmpeg</code></td><td>Local audio and video</td><td>Re-encoding the audio to a 13 MB mono MP3</td></tr>
+            <tr><td><code>whisper-cli</code></td><td>Local speech recognition (whisper.cpp)</td><td>The transcript and captions, made on the laptop</td></tr>
+            <tr><td><code>pandoc</code></td><td>Document conversion</td><td>Turning the reviewed page into Markdown for NotebookLM</td></tr>
+            <tr><td>Outbound prose check</td><td>A local script</td><td>Blocking common AI phrasing and house-style breaks in anything that leaves the machine, including these pages</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="notebooklm" aria-labelledby="nlm-title">
+      <div class="section-head">
+        <p class="eyebrow">The audio overview</p>
+        <h2 id="nlm-title">Connecting to NotebookLM</h2>
+      </div>
+      <div class="prose">
+        <p>NotebookLM has no official public API for personal accounts. The open-source <a href="https://github.com/teng-lin/notebooklm-py">notebooklm-py</a> project drives it through the same web endpoints the browser uses. It is unofficial, so it can break when Google changes the site. The steps were:</p>
+      </div>
+<pre><code># install the command-line tool
+uv tool install "notebooklm-py[browser]"
+
+# sign in once, in a real Chrome window
+notebooklm login --browser chrome
+
+# make a notebook and add the reviewed report as its only source
+notebooklm create "Learning Visibility in BADM 554"
+notebooklm source add --type file learning-visibility-badm554.md
+
+# generate a two-host deep-dive audio overview and wait for it
+notebooklm generate audio --format deep-dive --length default --wait "&lt;prompt below&gt;"
+
+# download it
+notebooklm download audio learning-visibility-badm554.m4a</code></pre>
+      <div class="prose">
+        <p><strong>The prompt</strong> named the audience and the limits: "Audience: Gies College of Business faculty and the learning team. Explain how BADM 554 makes student reasoning visible with GitHub, AI-assisted review and Canvas. Keep what the course records show separate from what they do not show yet: do not claim learning gains or faculty time savings. Use the four course cases as concrete examples. Treat the learning-team section as a separate, optional proposal, not part of the main findings."</p>
+        <p><strong>One sign-in bug.</strong> On version 0.8.4, <code>notebooklm login</code> printed "Already logged in" on a signed-out page and saved a session without the sign-in cookies, so every later command failed. The project had already fixed this in its issue tracker. Upgrading to 0.8.5 and signing in again with <code>--fresh</code> solved it. The lesson: check that a sign-in works with a test call before trusting the message that says it did.</p>
+        <p><strong>After the download,</strong> <code>ffmpeg</code> re-encoded the audio to mono MP3, and <code>whisper-cli</code> with the base English model made the transcript and the caption file. One recognition error, the author's surname, was corrected by hand.</p>
+      </div>
+    </section>
+
+    <section id="notused" aria-labelledby="notused-title">
+      <div class="section-head">
+        <p class="eyebrow">Editorial choices</p>
+        <h2 id="notused-title">What was not used, and why</h2>
+      </div>
+      <div class="prose">
+        <p>NotebookLM made three more items from the same source. Only one made it onto the page, and only after it was redrawn.</p>
+      </div>
+      <ul class="plain">
+        <li><strong>The mind map: used, redrawn.</strong> Its five branches became the Git diagram on the findings page, rebuilt as text so a screen reader can follow it.</li>
+        <li><strong>The infographic: not used.</strong> It said Canvas gives "unconfirmed delivery of grades and messages", which is wrong. It credited the tools with capturing reasoning, framed Canvas as shallow, and its text was part of an image, so a screen reader could not read it.</li>
+        <li><strong>The interactive learning overview: not used.</strong> It had five factual errors or added details. It placed the discussion review in the wrong module, invented penalties and causes that the records do not state, said grades were final when they had not been posted, and called a checked audit "automated". It also aimed its learning objectives at students rather than at the faculty audience.</li>
+      </ul>
+      <div class="prose">
+        <p>The audio overview has the same risk. It is a lively retelling, and it makes some points more strongly than the report does. That is why the page says the report holds where the two differ.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="wrap">
+    <p class="pagenav"><a href="index.html">&larr; Back to the findings</a><a href="#main">Back to top</a></p>
+    <p><strong>About this page.</strong> Written by Vishal Sachdev, Gies College of Business, University of Illinois Urbana-Champaign, October 2026. Drafted with Claude (Anthropic) from the session records, then reviewed and edited by the author.</p>
+  </div>
+</footer>
+</body>
+</html>

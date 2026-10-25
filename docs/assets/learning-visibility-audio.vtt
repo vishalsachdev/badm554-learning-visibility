@@ -1,0 +1,740 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.280
+ You know, when you go out to a really truly high-end restaurant, you get this perfectly
+
+00:00:05.280 --> 00:00:06.880
+ plated dish set down right in front of you.
+
+00:00:06.880 --> 00:00:08.080
+ Right. It looks amazing.
+
+00:00:08.080 --> 00:00:13.520
+ Yeah, exactly. You look at the presentation, you taste the final result, and you basically
+
+00:00:13.520 --> 00:00:20.400
+ judge the entire meal based on that one static endpoint. But as the diner, you have absolutely
+
+00:00:20.400 --> 00:00:22.480
+ no idea what actually happened back in the kitchen.
+
+00:00:22.480 --> 00:00:23.440
+ You really don't.
+
+00:00:23.440 --> 00:00:28.880
+ Right. Like, you don't know if the chef expertly layered those flavors over hours of careful prep,
+
+00:00:28.880 --> 00:00:32.560
+ or if the kitchen was literally on fire, and they burned the first three attempts.
+
+00:00:32.560 --> 00:00:36.560
+ And just hastily threw some garnish on a mediocre backup right before the buzzer.
+
+00:00:36.560 --> 00:00:41.840
+ Exactly. You only see the final output. But if you're the head chef trying to train a
+
+00:00:41.840 --> 00:00:45.360
+ culinary team, you cannot just look at the final plate.
+
+00:00:45.360 --> 00:00:47.280
+ No. You need to see the process.
+
+00:00:47.280 --> 00:00:48.880
+ Right. You need to see how they got there.
+
+00:00:49.600 --> 00:00:53.440
+ And here at the Geese College of Business, a new course method is essentially putting a
+
+00:00:53.440 --> 00:00:56.080
+ high-definition camera right into that kitchen.
+
+00:00:56.080 --> 00:00:59.840
+ Which is exactly what we are looking at today in this deep dive.
+
+00:00:59.840 --> 00:01:04.960
+ Yeah. So welcome to all of you tuning in, specifically the faculty and the learning team at Geese.
+
+00:01:04.960 --> 00:01:10.320
+ We are unpacking a brand new reviewed report. It's actually dated today, October 25,
+
+00:01:10.320 --> 00:01:15.840
+ 2026. And it focuses specifically on BADM 554.
+
+00:01:15.840 --> 00:01:18.880
+ Right. And that applies to both the online and in-person sections, right?
+
+00:01:18.880 --> 00:01:24.320
+ Yes, both sections. The whole goal of this deep dive is to explore how this course is making
+
+00:01:24.320 --> 00:01:28.400
+ student reasoning completely visible. Using a very specific tech stack.
+
+00:01:28.400 --> 00:01:34.800
+ Exactly. They are doing this using a combination of GitHub, AI assisted review, and Canvas.
+
+00:01:34.800 --> 00:01:38.640
+ So to everyone listening, let's establish the ground truth of what you're about to hear.
+
+00:01:38.640 --> 00:01:43.200
+ We are looking at a working course method. This is not, you know, some theoretical
+
+00:01:43.200 --> 00:01:48.400
+ white paper or a distant future proposal. Student work currently lives in GitHub,
+
+00:01:48.400 --> 00:01:51.040
+ where literally every single version and change is kept.
+
+00:01:51.040 --> 00:01:55.360
+ Yeah, the history is all there. Right. And AI and custom scripts make it practical for
+
+00:01:55.360 --> 00:02:00.880
+ you, the faculty, to inspect that work repeatedly. And Canvas remains exactly what it should be,
+
+00:02:00.880 --> 00:02:04.240
+ which is the central hub for sending messages and posting final grades.
+
+00:02:04.240 --> 00:02:08.240
+ Okay. Let's unpack this because there is a crucial caveat we need to lay on the table
+
+00:02:08.240 --> 00:02:13.120
+ immediately. Oh, absolutely. We have to draw a very hard line between what these course records
+
+00:02:13.120 --> 00:02:16.880
+ actually show and what they do not show. Right. What's the distinction?
+
+00:02:17.520 --> 00:02:22.560
+ Well, the records absolutely prove that this method operates successfully on a technical level.
+
+00:02:22.560 --> 00:02:26.960
+ I mean, the scripts run, the checks happen, flags are caught and messages are sent.
+
+00:02:26.960 --> 00:02:31.280
+ Okay. But they do not yet show that students actually learned more.
+
+00:02:31.280 --> 00:02:35.040
+ Wow. Okay. Yeah. And they certainly do not show that faculty save time.
+
+00:02:35.600 --> 00:02:38.800
+ That is such an important distinction for anyone listening who, you know,
+
+00:02:38.800 --> 00:02:44.240
+ grades these kinds of assignments. Exactly. Claiming that faculty are suddenly saving hours of time,
+
+00:02:44.240 --> 00:02:48.160
+ or that students have experienced massive learning gains, that would just be entirely
+
+00:02:48.160 --> 00:02:53.280
+ premature at this point. Way too early. Those are the outcomes that need to be measured next.
+
+00:02:53.280 --> 00:02:57.760
+ Right. For now, we are keeping what was built completely separate from what it might eventually
+
+00:02:57.760 --> 00:03:04.640
+ achieve. So to understand why BADM 554 adopted this completely new multi-layered technical stack,
+
+00:03:04.640 --> 00:03:07.600
+ we have to look at the baseline. Yeah. The current state of things.
+
+00:03:07.600 --> 00:03:11.840
+ Right. If you're a professor listening to this, you already know the utter dread of opening up
+
+00:03:11.840 --> 00:03:16.640
+ 50 different Jupiter notebooks just to figure out where a single student went wrong on an
+
+00:03:16.640 --> 00:03:22.400
+ analytics assignment. It's a nightmare. It really is. So what do instructors already have in Canvas?
+
+00:03:23.040 --> 00:03:28.160
+ And why wasn't that quite enough for this very specific goal of making student reasoning visible?
+
+00:03:28.160 --> 00:03:32.960
+ Well, I mean, Canvas is a fantastic learning management system. Right. It gives instructors
+
+00:03:32.960 --> 00:03:38.320
+ real evidence about learning. Oh, for sure. It's perfectly designed for hosting process-focused
+
+00:03:38.320 --> 00:03:42.560
+ assignments, tracking grades, logging submissions, showing page views, all of that.
+
+00:03:43.200 --> 00:03:47.920
+ But it hits some structural limitations. Exactly. When you try to do the kind of deep
+
+00:03:47.920 --> 00:03:53.760
+ iterative analysis we're talking about today, Canvas course analytics only refreshes every 24 hours.
+
+00:03:53.760 --> 00:03:57.280
+ Right. And in a modern digital classroom, 24 hours is a massive lag.
+
+00:03:57.280 --> 00:04:02.240
+ It's huge. And more importantly, it really struggles to capture student participation data
+
+00:04:02.240 --> 00:04:06.640
+ that happens in external tools. Yeah. I mean, Canvas itself even warns that it's
+
+00:04:06.640 --> 00:04:10.800
+ paid view data and quiz logs shouldn't be used to judge academic integrity.
+
+00:04:10.800 --> 00:04:15.680
+ And that structural blindness to external work is what brings us to Git and GitHub. And we need
+
+00:04:15.680 --> 00:04:19.840
+ to introduce this not just as like a software development tool for coders, but really as a
+
+00:04:19.840 --> 00:04:24.960
+ foundational mental model for all knowledge work. I love that framing, because if traditional
+
+00:04:24.960 --> 00:04:29.840
+ Canvas grading is inspecting that finished plated meal we talked about, Git is the camera in the
+
+00:04:29.840 --> 00:04:35.120
+ kitchen. Exactly. When a student makes a commit in GitHub, they aren't just clicking save on a
+
+00:04:35.120 --> 00:04:39.280
+ Word document. No, it's much more deliberate. Right. They are intentionally saving an important
+
+00:04:39.280 --> 00:04:44.000
+ state of their project. So they can see exactly what changed from the step before.
+
+00:04:44.000 --> 00:04:47.600
+ And then there's the concept of a branch. Right. Explain that for a second.
+
+00:04:48.160 --> 00:04:53.440
+ In this mental model, a branch allows a student to keep alternative ideas totally separate. They
+
+00:04:53.440 --> 00:04:58.480
+ become actual proposals to test rather than just, you know, random guesses that get overwritten and
+
+00:04:58.480 --> 00:05:02.000
+ lost forever if they don't work out. So you could actually track a student's change of direction
+
+00:05:02.000 --> 00:05:06.800
+ over time. Yes. And here's where it gets really interesting. Seeing that the text changed,
+
+00:05:06.800 --> 00:05:12.560
+ which in Git is called a diff, isn't actually the magic part of this system. Wait, really? No,
+
+00:05:12.560 --> 00:05:17.920
+ the diff just shows the mechanical alteration of the code or the text. The true benefit to the
+
+00:05:17.920 --> 00:05:23.200
+ student and the actual window into learning for the faculty is the explanation attached to that
+
+00:05:23.200 --> 00:05:29.680
+ change. Oh, I see. Yeah, because let's face the reality of education in 2026. An AI agent can easily
+
+00:05:29.680 --> 00:05:36.160
+ write code or generate text so easily. Right. So claiming unaided work is incredibly tough to
+
+00:05:36.160 --> 00:05:42.160
+ prove and enforce. Right. The MSBA I design principles actually treat AI as a thinking partner.
+
+00:05:42.160 --> 00:05:48.240
+ Exactly. So a student's ability to explain why they accepted AI feedback or why they rejected it
+
+00:05:48.240 --> 00:05:53.040
+ or why they changed their hypothesis midway through a project. That explanation is where
+
+00:05:53.040 --> 00:05:58.880
+ the learning actually becomes visible. But wait, if we are tracking every single time a student
+
+00:05:58.880 --> 00:06:04.400
+ hits safe or makes a commit, are we just begging them to spam the save button 100 times an hour so
+
+00:06:04.400 --> 00:06:09.040
+ they look busy on a dashboard? That is a highly valid concern because it feels like this could
+
+00:06:09.040 --> 00:06:15.120
+ easily devolve into like a surveillance game rather than an actual educational tool. Yeah. And the
+
+00:06:15.120 --> 00:06:21.120
+ course audit explicitly warns about this exact risk commits absolutely do not measure effort and
+
+00:06:21.120 --> 00:06:26.240
+ they do not measure quality. Okay, that's good to clarify. If a course rewards high commit counts,
+
+00:06:26.240 --> 00:06:30.560
+ students will simply game the system to generate meaningless activity for the dashboard. Right.
+
+00:06:30.560 --> 00:06:36.240
+ They're smart. Exactly. The goal of this stack is to teach honest version controlled professional
+
+00:06:36.240 --> 00:06:42.000
+ practice. The system wants a few meaningful well explained checkpoints, not a barrage of empty
+
+00:06:42.000 --> 00:06:47.040
+ saves just to look busy. Okay, so we have the good hub data and we have canvas for grades.
+
+00:06:47.040 --> 00:06:52.000
+ But these two systems don't naturally talk to each other. No, they don't. So how are they actually
+
+00:06:52.000 --> 00:06:57.360
+ connecting the dots without the professor doing like hours of manual data entry? The idea of
+
+00:06:57.360 --> 00:07:02.480
+ looking at every meaningful commit from every student across multiple platforms sounds like a
+
+00:07:02.480 --> 00:07:07.840
+ total recipe for drowning in data. It does. But the report outlines a highly repeatable
+
+00:07:07.840 --> 00:07:14.080
+ five step sequence that manages this workflow. Okay, what's step one? Step one is to specify
+
+00:07:14.080 --> 00:07:19.280
+ the evidence. The instructor turns the assignment into something inspectable by using very clear
+
+00:07:19.280 --> 00:07:24.560
+ rubrics and starter files. Right. So both the students and the reviewing tools know exactly
+
+00:07:24.560 --> 00:07:30.880
+ what to look for from the jump. Precisely. Okay, step one makes sense. But step two collecting
+
+00:07:30.880 --> 00:07:36.000
+ all this work must be a logistical nightmare. If you have a hundred students in a section,
+
+00:07:36.000 --> 00:07:40.720
+ it would be but that's where the automated scripts come in. Okay. Step two is collect
+
+00:07:40.720 --> 00:07:45.600
+ and reconcile custom scripts gather all the repositories from GitHub and match them against
+
+00:07:45.600 --> 00:07:51.120
+ the official course rosters. That's convenient. Very. It automatically filters out any staff
+
+00:07:51.120 --> 00:07:56.720
+ commits or students who have dropped the course, just cleaning the data instantly. Nice. And step
+
+00:07:56.720 --> 00:08:03.280
+ three step three is where it gets highly analytical. It's inspect and interpret. This is where the AI
+
+00:08:03.280 --> 00:08:09.840
+ assisted review reads the code and the explanations in context. But wait, is the AI just making decisions
+
+00:08:09.840 --> 00:08:16.000
+ on its own? No, and that's a vital bottleneck here. The human instructor checks any AI interpretation
+
+00:08:16.000 --> 00:08:21.440
+ that has actual consequences for the student. Okay, that's a relief. Yeah, which leads to step
+
+00:08:21.440 --> 00:08:27.360
+ four, approve and act. Once the human instructor reviews the AI's findings, they draft the targeted
+
+00:08:27.360 --> 00:08:33.760
+ messages or great updates. Got it. And the final step. Step five is read back and close the loop.
+
+00:08:33.760 --> 00:08:38.800
+ The system confirms the message was actually sent or the grade was officially updated in canvas.
+
+00:08:38.800 --> 00:08:43.840
+ You know, I think we need a good analogy to understand how this tech stack powers those five steps
+
+00:08:43.840 --> 00:08:49.840
+ without totally overwhelming the faculty. Let's hear it. Think of it like a highly efficient factory.
+
+00:08:50.720 --> 00:08:55.680
+ The skills are the blueprints. You know, they define the reusable procedures for the assignment.
+
+00:08:55.680 --> 00:09:01.280
+ Right. The scripts are the conveyor belts. They automatically move the assignments around
+
+00:09:01.280 --> 00:09:07.040
+ collecting and delivering the work repeatedly. And the AI is the quality assurance inspector at
+
+00:09:07.040 --> 00:09:12.720
+ the end of the line. It helps read the highly varied student work and draft the specific feedback
+
+00:09:12.720 --> 00:09:18.080
+ based on the blueprints. I like that. But bringing that factory analogy together requires a very
+
+00:09:18.080 --> 00:09:25.760
+ specific connection layer, which is canvas MCP. Right. Canvas MCP. This is an open source tool
+
+00:09:25.760 --> 00:09:32.560
+ built by Vishal Sachdev. MCP stands for model context protocol. Okay, without getting too bogged
+
+00:09:32.560 --> 00:09:39.280
+ down in the engineering, what does that actually do? Basically, MCP is essentially a standardized
+
+00:09:39.280 --> 00:09:45.440
+ language that allows AI models to safely talk to external tools. So to be clear, this is not
+
+00:09:45.440 --> 00:09:51.040
+ just some new analytics dashboard built into canvas by default. No, not at all. It's a specialized
+
+00:09:51.040 --> 00:09:56.560
+ fridge that lets AI agents read from and write directly to canvas assignments, submissions,
+
+00:09:56.560 --> 00:10:01.120
+ and discussions without the professor having to constantly copy and paste data between windows.
+
+00:10:01.120 --> 00:10:06.160
+ Exactly. And what's fascinating here is that having this incredible connection layer doesn't
+
+00:10:06.160 --> 00:10:10.960
+ mean the course just runs on autopilot. Right. An automated schedule is not proof of a reliable
+
+00:10:10.960 --> 00:10:16.560
+ service. Yeah. The AI might do the heavy lifting of drafting the feedback and organizing the data,
+
+00:10:16.560 --> 00:10:21.680
+ but human approval remains the absolutely vital bottleneck. Because the instructor is the one
+
+00:10:21.680 --> 00:10:26.880
+ deciding if the assignment wording was confusing, rather than blindly accepting that a student just
+
+00:10:26.880 --> 00:10:34.160
+ failed to grasp the concept. Exactly. So we have this factory built, the blueprints are drawn,
+
+00:10:34.160 --> 00:10:39.200
+ and the caviar built are running. Let's look at the actual production line from fall 2026.
+
+00:10:39.200 --> 00:10:45.280
+ Let's do it. The report provides four concrete cases of this exact workflow in action. And I
+
+00:10:45.280 --> 00:10:49.360
+ really want to talk about what happens when things break, because that's the ultimate test of any
+
+00:10:49.360 --> 00:10:54.480
+ automated system, right? Absolutely. What happens when the AI is the one making the mistake?
+
+00:10:54.480 --> 00:10:59.440
+ Well, we actually saw this in module six, which was an online section. We can call this case
+
+00:10:59.440 --> 00:11:05.040
+ the wrong flag. Okay, what happened? The AI did a first pass over 18 submitted student notebooks,
+
+00:11:05.040 --> 00:11:09.120
+ and it flagged seven students for missing a required technical pipeline.
+
+00:11:09.120 --> 00:11:14.400
+ Seven out of 18. Yeah. But a broader human recheck looked closer at the notebook cells,
+
+00:11:14.400 --> 00:11:19.360
+ the attachments, and later commits. And what did they find? The human found that five were actually
+
+00:11:19.360 --> 00:11:25.200
+ missing. One was partial and one was fully present. Wow. So the AI was dead wrong about one student.
+
+00:11:25.200 --> 00:11:30.080
+ Completely wrong. And because the human was in the loop, Vishal judged that the submission
+
+00:11:30.080 --> 00:11:36.080
+ instructions themselves were unclear. Right. So instead of a blanket penalty based on a faulty AI
+
+00:11:36.080 --> 00:11:41.360
+ flag, six targeted Canvas messages went out, allowing penalty free resubmissions. Yep.
+
+00:11:42.080 --> 00:11:47.120
+ I mean, this perfectly illustrates why AI cannot just auto grade these complex assignments.
+
+00:11:47.120 --> 00:11:50.720
+ It desperately needs human supervision to spot its own blind spots.
+
+00:11:50.720 --> 00:11:56.160
+ Totally. Now moving to module seven, we see how the system handles course logistics and scales
+
+00:11:56.160 --> 00:12:00.960
+ independent thinking. Okay. This notebook asked students to make a prediction before using AI,
+
+00:12:00.960 --> 00:12:05.280
+ and then write a comparison after using it. Okay. So a pre and post check.
+
+00:12:05.280 --> 00:12:10.400
+ Right. And the automated scripts verified that 24 identical copies of this notebook structure
+
+00:12:10.400 --> 00:12:15.440
+ were distributed to the correct GitHub folders. How did they verify that? They did this by
+
+00:12:15.440 --> 00:12:21.840
+ verifying the file hash. Okay. Wait, a file hash? What is that practically? A file hash is essentially
+
+00:12:21.840 --> 00:12:27.040
+ a unique digital fingerprint for a document. If even one single character changes, the fingerprint
+
+00:12:27.040 --> 00:12:32.800
+ changes entirely. Oh, I see. So by checking the hash, the system mathematically proves that a
+
+00:12:32.800 --> 00:12:38.000
+ student received the exact starting file. Exactly. And it successfully skips any students who had
+
+00:12:38.000 --> 00:12:42.800
+ already dropped the course. Okay. But honestly, just because a student receives a structured folder
+
+00:12:42.800 --> 00:12:48.400
+ doesn't mean they actually sat there and did the independent pre AI thinking. No, it doesn't.
+
+00:12:48.400 --> 00:12:54.000
+ I mean, are we measuring actual learning here or just logistics? That is the exact critical
+
+00:12:54.000 --> 00:12:59.520
+ lens we need to apply. The distribution of those files proves the structure arrived safely. It
+
+00:12:59.520 --> 00:13:05.440
+ verifies the logistics of the course perfectly. But it does not prove that a genuine independent
+
+00:13:05.440 --> 00:13:10.480
+ prediction occurred. Because proving the learning requires looking at the actual content of the
+
+00:13:10.480 --> 00:13:15.760
+ commits. Exactly. Which brings us to the in person section dealing with participation.
+
+00:13:15.760 --> 00:13:19.120
+ Case number three. Right. They made participation an actual
+
+00:13:19.600 --> 00:13:24.320
+ inspectable checkpoint in the work rather than just, you know, tracking who raised a hand in a
+
+00:13:24.320 --> 00:13:30.160
+ crowded lecture hall. Which is always so subjective anyway. Right. So students had to commit substantive
+
+00:13:30.160 --> 00:13:35.920
+ text to their team repositories by a specific deadline. Okay. The automated audit checked all
+
+00:13:35.920 --> 00:13:42.720
+ 19 team repositories out of 72 student results 61 were complete and 11 were incomplete. And those
+
+00:13:42.720 --> 00:13:47.520
+ results were read back to canvas automatically. Yep. See, that saves the professor from having
+
+00:13:47.520 --> 00:13:53.200
+ to manually open 19 different repositories tracked down 72 individual contributions and
+
+00:13:53.200 --> 00:13:59.520
+ tally them up on a spreadsheet. It's a huge time saver for logistics. But again, this just shows
+
+00:13:59.520 --> 00:14:04.720
+ an identifiable piece of work existed by the deadline. It's really just a binary check. Yeah,
+
+00:14:04.720 --> 00:14:10.240
+ exactly. To approach the quality of the learning, we have to look at the online module eight discussion
+
+00:14:10.240 --> 00:14:16.480
+ case. Oh, this one is fascinating. This is where we see the granular power of the AI inspector.
+
+00:14:16.480 --> 00:14:22.240
+ Tell them what happened. An AI assisted review read 19 student discussion posts and drafted
+
+00:14:22.240 --> 00:14:28.720
+ eight highly specific instructor replies. And when we say specific, we mean very specific.
+
+00:14:28.720 --> 00:14:35.120
+ Right. I mean, the AI caught a subtle coding error called a bad data join. The student had
+
+00:14:35.120 --> 00:14:40.320
+ merged two spreadsheets. The total row count looked perfectly fine. But the actual information
+
+00:14:40.320 --> 00:14:45.920
+ inside the rows have been totally wiped out. Yeah. A human instructors giving 19 posts late at
+
+00:14:45.920 --> 00:14:51.840
+ night might easily miss that. But the AI actually caught it. And once a minor posting failure was
+
+00:14:51.840 --> 00:14:57.600
+ fixed, all eight of those approved, highly targeted replies went live in canvas. That's incredible.
+
+00:14:57.600 --> 00:15:03.280
+ It is. If we connect this to the bigger picture, it shows the capability for highly personalized
+
+00:15:03.280 --> 00:15:08.800
+ feedback at a massive scale. But we still have to be disciplined about our claims here. The records
+
+00:15:08.800 --> 00:15:14.720
+ show the delivery of the feedback. They do not show if the students read that feedback, internalized
+
+00:15:14.720 --> 00:15:19.280
+ it and revise their reasoning based on it, which naturally leads us to the next massive question,
+
+00:15:19.280 --> 00:15:24.800
+ right? What do we measure next? Exactly. We've built this fantastic delivery mechanism for course
+
+00:15:24.800 --> 00:15:30.240
+ materials and targeted critiques. But the missing link is observing one complete closed feedback
+
+00:15:30.240 --> 00:15:36.160
+ loop. A closed loop looks exactly like this. The student submits their initial work. They receive
+
+00:15:36.160 --> 00:15:41.520
+ the AI assisted feedback. They actually revise the work based on that feedback. And then crucially,
+
+00:15:41.520 --> 00:15:46.560
+ they explain the reasoning behind their change in a new Git commit. Right. That entire cycle is
+
+00:15:46.560 --> 00:15:50.640
+ what we need to measure in the next round of evaluations before anyone can declare total
+
+00:15:50.640 --> 00:15:55.200
+ victory for student learning. And we also need to rigorously evaluate the impact on the faculty.
+
+00:15:55.200 --> 00:16:00.240
+ Oh, for sure. Like did the effort actually go down? We have to measure the time spent setting
+
+00:16:00.240 --> 00:16:05.440
+ up the scripts, managing the technical exceptions and repairing the workflow. And then compare that
+
+00:16:05.440 --> 00:16:10.080
+ against the time it would take to just grade 72 assignments manually. Exactly. And we need to
+
+00:16:10.080 --> 00:16:15.280
+ count the false positives to see how much we can truly trust the AI flags over a full semester.
+
+00:16:15.280 --> 00:16:20.320
+ There's also the question of whether this version controlled professional practice actually carries
+
+00:16:20.320 --> 00:16:26.640
+ over. What do you mean? Well, can a student use this same repository workflow on an unfamiliar task
+
+00:16:26.640 --> 00:16:31.520
+ later in the program? Or do they just abandon it the second it isn't required for a grade?
+
+00:16:31.520 --> 00:16:36.320
+ That's a great point. And the report also highlights some unfinished promises that need attention.
+
+00:16:36.320 --> 00:16:41.920
+ Like what? Well, some tools are still just proposals or very early deployments. There's
+
+00:16:41.920 --> 00:16:47.600
+ a plan for a combined activity dashboard, but it currently has severe limits regarding matching
+
+00:16:47.600 --> 00:16:53.360
+ student identities across these different systems. Okay. There are video quiz players deployed,
+
+00:16:53.360 --> 00:16:58.000
+ but having the tool turned on isn't the same as successfully interpreting the learning record.
+
+00:16:58.000 --> 00:17:03.760
+ Right. And there is an SQL tutor called Taxi Crawler that actually has reports of failing
+
+00:17:03.760 --> 00:17:09.680
+ to load entirely. This raises an important question about how we interpret data in a tech heavy stack.
+
+00:17:10.240 --> 00:17:16.960
+ Exactly. The report is very firm on this. If the SQL tutor fails to load or a student hits a strict
+
+00:17:16.960 --> 00:17:22.960
+ quota limit, that must never be interpreted by the analytics as student confusion or disengagement.
+
+00:17:22.960 --> 00:17:29.040
+ Right. A service problem is a service problem. Yes. It is not a student failure. And the system
+
+00:17:29.040 --> 00:17:34.480
+ must be smart enough to know the difference. Absolutely. So far, we've been talking entirely
+
+00:17:34.480 --> 00:17:39.520
+ about student performance and faculty grading. But buried in these records is a totally separate
+
+00:17:39.520 --> 00:17:45.040
+ optional proposal. And this is specifically targeted at you, the keys learning team.
+
+00:17:45.040 --> 00:17:50.960
+ It's a really fascinating pivot. The proposal asks, what if we use this exact same workflow,
+
+00:17:50.960 --> 00:17:55.360
+ not to evaluate the students, but to evaluate the course design itself?
+
+00:17:55.920 --> 00:18:00.640
+ It's like using the AI as a structural inspector for the building rather than using it as a
+
+00:18:00.640 --> 00:18:06.320
+ security guard to watch the tenants. Think back to the first case where the AI flagged seven
+
+00:18:06.320 --> 00:18:10.960
+ students, but it turned out the submission instructions were genuinely unclear. The learning
+
+00:18:10.960 --> 00:18:16.720
+ team could use this evidence to ask, are our instructions actually producing the intended work?
+
+00:18:16.720 --> 00:18:22.560
+ Did the approved materials reach the right people? The report suggests starting very small, right?
+
+00:18:22.560 --> 00:18:28.320
+ Yeah. Like a pilot programmer being just one weekly package, meaning the assignment, the rubric,
+
+00:18:28.320 --> 00:18:34.000
+ the Jupiter notebook, and its placement in canvas. Just one. Yeah. You run the scripts before delivery
+
+00:18:34.000 --> 00:18:39.600
+ to check that the rubric and the assignment agree that the links actually work and that the roster
+
+00:18:39.600 --> 00:18:44.720
+ matches perfectly. And during delivery, the learning team can use these tools to separate out technical
+
+00:18:44.720 --> 00:18:49.840
+ failures from incomplete student work, which is huge. It is. You can send reports of unclear
+
+00:18:49.840 --> 00:18:54.320
+ instructions back to the faculty owner, all without ever changing the assessment rules or
+
+00:18:54.320 --> 00:18:58.720
+ contacting the students directly. But before the learning team expands this, they really need to
+
+00:18:58.720 --> 00:19:03.520
+ measure their own metrics. Oh, definitely. They need to track the time spent per weekly review
+
+00:19:03.520 --> 00:19:08.480
+ compared to the old manual way, track the false flags generated by the AI inspector,
+
+00:19:09.360 --> 00:19:14.880
+ and measure how long it actually takes to fix a confirmed course defect once the system finds it.
+
+00:19:15.440 --> 00:19:19.600
+ And access and ownership must be strictly managed here. Good point.
+
+00:19:19.600 --> 00:19:24.400
+ The learning team should use the absolute least amount of course access necessary to do the
+
+00:19:24.400 --> 00:19:29.600
+ structural review and ensure all student records remain aggregated or students safe to protect
+
+00:19:29.600 --> 00:19:34.400
+ their privacy. Right. Keep the focus entirely on course quality, not student monitoring.
+
+00:19:34.400 --> 00:19:42.080
+ Exactly. So let's bring this all together. BADM 554 has successfully built and demonstrated a
+
+00:19:42.080 --> 00:19:46.960
+ working method to connect GitHub's amazing process visibility with Canvas' traditional
+
+00:19:46.960 --> 00:19:51.520
+ grading system. They really have. And they're powering this with AI and the Canvas model context
+
+00:19:51.520 --> 00:19:57.200
+ protocol. We have concrete proof of successful delivery and highly targeted feedback at scale.
+
+00:19:57.200 --> 00:20:03.680
+ We do. But the true test, the actual proof of learning gains and faculty time savings
+
+00:20:03.680 --> 00:20:09.280
+ is still waiting on a full closed feedback loop evaluation. It is a massive step forward,
+
+00:20:09.280 --> 00:20:14.480
+ but it is just the first step. The infrastructure is there. Now we have to watch the learning happen
+
+00:20:14.480 --> 00:20:20.560
+ inside it. So what does this all mean? I want to leave you the geese faculty and learning team
+
+00:20:20.560 --> 00:20:27.200
+ with one final thought to mull over. Okay. If AI makes generating the correct final answer
+
+00:20:27.200 --> 00:20:32.880
+ practically instantaneous and this new GitHub integration makes this step by step process of
+
+00:20:32.880 --> 00:20:39.680
+ getting there completely visible. Yeah. Does the traditional final deliverable even matter anymore?
+
+00:20:39.680 --> 00:20:45.360
+ Oh, wow. If we go back to our restaurant analogy, if a robot can instantly replicate the beautifully
+
+00:20:45.360 --> 00:20:50.640
+ plated meal, maybe the only thing of actual value left to assess in business education
+
+00:20:50.640 --> 00:20:57.200
+ isn't the food itself. That's deep. Maybe in the very near future, we will only be assessing the
+
+00:20:57.200 --> 00:21:02.400
+ student's version controlled history of how they defended their culinary decisions while the AI
+
+00:21:02.400 --> 00:21:07.360
+ critiqued every move they made in the kitchen. That is the real paradigm shift. It really is.
+
+00:21:07.920 --> 00:21:10.400
+ Well, until next time, keep diving deep.
+

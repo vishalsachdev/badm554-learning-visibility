@@ -1,0 +1,75 @@
+{
+  "name": "Git Technical Practices and Educational Mental Models",
+  "children": [
+    {
+      "name": "Commits and Diffs",
+      "children": [
+        {
+          "name": "Mental model: save important state and see changes"
+        },
+        {
+          "name": "Link a correction to its specific reason"
+        },
+        {
+          "name": "Avoid remembering only the polished result"
+        }
+      ]
+    },
+    {
+      "name": "Branches",
+      "children": [
+        {
+          "name": "Mental model: keep alternative approaches apart"
+        },
+        {
+          "name": "Test proposals systematically instead of overwriting guesses"
+        },
+        {
+          "name": "Compare different options during analysis"
+        }
+      ]
+    },
+    {
+      "name": "Issues",
+      "children": [
+        {
+          "name": "Mental model: state problem, evidence, and uncertainty"
+        },
+        {
+          "name": "Define clearly what 'done' means"
+        },
+        {
+          "name": "Make precise questioning part of the analysis"
+        }
+      ]
+    },
+    {
+      "name": "Pull Requests and Review",
+      "children": [
+        {
+          "name": "Mental model: offer changes with reasons"
+        },
+        {
+          "name": "Let someone challenge the proposed work"
+        },
+        {
+          "name": "Explain which feedback was accepted, rejected, or deferred"
+        }
+      ]
+    },
+    {
+      "name": "Tests and Reproducible Work",
+      "children": [
+        {
+          "name": "Mental model: make analytical claims checkable"
+        },
+        {
+          "name": "Allow teammates or AI agents to rerun checks"
+        },
+        {
+          "name": "Identify exactly where explanations fail"
+        }
+      ]
+    }
+  ]
+}
