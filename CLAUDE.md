@@ -1,7 +1,7 @@
 # BADM 554 Learning Visibility (public site)
 
 **Type:** teaching / public write-up. **Owner and author:** Vishal Sachdev, Gies College of Business.
-**Remote:** `vishalsachdev/badm554-learning-visibility` (PRIVATE until Vishal approves the page; then public with GitHub Pages from `docs/`).
+**Remote:** `vishalsachdev/badm554-learning-visibility`, PUBLIC since 2026-10-25 (Vishal's yes). Live: https://vishalsachdev.github.io/badm554-learning-visibility/ (Pages from `docs/`, legacy build). `context/` is local only and gitignored; never track it.
 
 A public page on how BADM 554 (Fall 2026, online and in-person sections) makes student reasoning visible with GitHub, AI-assisted review and Canvas, what the course records show, and what they do not show yet. It carries a NotebookLM audio overview and a process note on how the page itself was built.
 
@@ -24,3 +24,6 @@ Start with [plan-as-approved.md](plan-as-approved.md), then [context/HISTORY.md]
 ### 2026-10-25
 - **Created** from the msba-online session. Context, plan and assets moved here. Site not built yet.
 - **Next:** build `docs/index.html` and `docs/process.html` per the plan; Vishal reviews; then public + Pages.
+- **Built** (same day, session `badm554-learning-visibility`): `docs/index.html` retitled "Making Student Reasoning Visible", `docs/process.html`; audio moved to `docs/assets/`. Outbound gate clean except a verbatim "paradigm shift" in the NotebookLM transcript (Vishal: keep). 375px and no-JS checked.
+- **Published:** history squashed to one commit (`context/` held private links and a personal address), repo made public, Pages on. Old SHAs `ab67831`, `9cbe1a0` stay reachable on GitHub by direct URL until GitHub purges them.
+- **Yun Huang email** staged in Thunderbird Drafts (replaced Vishal's started draft); links to the live site. Not sent.
